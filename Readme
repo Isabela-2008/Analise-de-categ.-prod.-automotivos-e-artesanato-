@@ -1,0 +1,36 @@
+Enunciado
+Desafio de Projeto: Análise de Categorias de Produtos
+
+Cenário: Você foi contratado para realizar uma análise de dados que contém informações sobre categorias de produtos de duas grandes indústrias: Artesanato e Automotiva. O objetivo é entender melhor como esses produtos estão distribuídos, identificar padrões e fornecer recomendações para melhorar a estratégia de negócios.
+
+Tarefas:
+
+Carregar e Explorar os Dados: Carregue o conjunto de dados e realize uma análise exploratória inicial.
+Limpeza de Dados: Identifique e trate valores ausentes e duplicatas.
+Análise por Gráficos: Gere visualizações significativas para entender a distribuição e a proporção das categorias.
+Relatório Final: Elabore um relatório detalhado com a descrição dos dados, metodologia de análise, explicação das visualizações e recomendações baseadas nos insights obtidos.
+Objetivos:
+
+Analisar a distribuição das categorias por indústria.
+Visualizar a proporção das categorias dentro de cada indústria.
+Identificar possíveis padrões e tendências.
+
+# Análise de Categorias de Produtos
+
+## Descrição
+Este projeto realiza uma análise das categorias de produtos nas indústrias de Artesanato e Automotiva utilizando um conjunto de dados. O objetivo é explorar a distribuição das categorias, visualizar as proporções e fornecer recomendações baseadas nos insights obtidos.
+
+## Estrutura do Projeto
+
+1. **Carregar e Explorar os Dados:** O código carrega os dados a partir de um arquivo CSV hospedado no Google Drive e realiza uma análise exploratória inicial.
+2. **Limpeza de Dados:** O código trata valores ausentes e remove duplicatas para garantir a integridade dos dados.
+3. **Análise por Gráficos:** O projeto gera os seguintes gráficos:
+   - **Gráfico de Barras:** Mostra a quantidade de categorias em cada indústria.
+   - **Gráfico de Pizza:** Apresenta a proporção de cada categoria dentro de cada indústria.
+4. **Relatório Final:** O relatório detalha a descrição dos dados, a metodologia de análise, explicações das visualizações e recomendações.
+
+## Instruções de Execução
+
+1. **Clone o Repositório:**
+   ```bash
+   git clone <URL_DO_REPOSITORIO>

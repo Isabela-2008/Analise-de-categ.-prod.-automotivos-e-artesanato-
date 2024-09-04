@@ -1,0 +1,27 @@
+
+### `.gitignore`
+
+```plaintext
+# Ignorar arquivos de compilação
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignorar ambientes virtuais
+venv/
+.env/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+*.swp
+
+# Ignorar arquivos do Jupyter Notebook
+.ipynb_checkpoints/
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db

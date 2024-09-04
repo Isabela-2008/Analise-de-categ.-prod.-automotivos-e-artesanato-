@@ -1,0 +1,75 @@
+# Importando bibliotecas necessárias
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# Configurando o estilo dos gráficos
+sns.set(style="whitegrid")
+
+# Carregando os dados a partir do Google Drive
+url = 'https://drive.google.com/uc?id=1JE4-gKKgr7abGKgq3fQFz7lloK5x3Qi1'
+data = pd.read_csv(url)
+
+# Exibindo as primeiras linhas do dataframe para inspeção inicial
+print(data.head())
+
+# 1. Carregar e Explorar os Dados
+print(data.info())
+print(data['category_name'].value_counts())
+
+# 2. Limpeza de Dados
+# Verificando e tratando valores ausentes
+print(data.isnull().sum())
+data = data.dropna()  # Remover qualquer linha com valores ausentes
+
+# Verificando e removendo duplicatas
+data = data.drop_duplicates()
+
+# 3. Análise por Gráficos
+
+# Dividindo as categorias em Artesanato e Automotiva
+craft_categories = [
+    'Beading & Jewelry Making', 'Fabric Decorating', 'Knitting & Crochet Supplies', 
+    'Printmaking Supplies', 'Scrapbooking & Stamping Supplies', 'Sewing Products',
+    'Craft & Hobby Fabric', 'Needlework Supplies', 'Arts, Crafts & Sewing Storage',
+    'Painting, Drawing & Art Supplies', 'Craft Supplies & Materials', 'Gift Wrapping Supplies',
+    'Party Decorations'
+]
+
+auto_categories = [
+    'Automotive Paint & Paint Supplies', 'Heavy Duty & Commercial Vehicle Equipment',
+    'Automotive Tires & Wheels', 'Automotive Tools & Equipment',
+    'Automotive Performance Parts & Accessories', 'Car Care', 'Oils & Fluids',
+    'Automotive Replacement Parts', 'Lights, Bulbs & Indicators',
+    'Automotive Interior Accessories', 'Automotive Exterior Accessories',
+    'Automotive Enthusiast Merchandise', 'Car Electronics & Accessories',
+    'RV Parts & Accessories', 'Motorcycle & Powersports'
+]
+
+data['industry'] = np.where(data['category_name'].isin(craft_categories), 'Artesanato', 'Automotiva')
+
+# Gráfico de Barras: Quantidade de Categorias por Indústria
+plt.figure(figsize=(10, 6))
+sns.countplot(x='industry', data=data, palette='viridis', hue='industry', legend=False)
+plt.title('Quantidade de Categorias por Indústria')
+plt.xlabel('Indústria')
+plt.ylabel('Quantidade de Categorias')
+plt.show()
+
+for industry in ['Artesanato', 'Automotiva']:
+    industry_data = data[data['industry'] == industry]
+
+# Gráfico de Linha: Tendência de Popularidade das Categorias (se houver dados temporais)
+# Como não temos dados temporais, essa parte será removida.
+
+# Gráfico de Dispersão: Visualização de Correlações Relevantes
+# Se tivermos atributos adicionais como preço, a seguir seria um exemplo de gráfico de dispersão
+# Caso contrário, removemos essa sugestão.
+
+# 4. Relatório Final
+# Como não é possível gerar um relatório aqui diretamente, você pode utilizar um editor de texto
+# ou um Jupyter Notebook para compor seu relatório detalhado. Inclua:
+# - Descrição dos dados e metodologia de análise.
+# - Explicação de cada visualização.
+# - Recomendações baseadas nos insights obtidos.
